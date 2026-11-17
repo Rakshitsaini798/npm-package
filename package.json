@@ -1,5 +1,5 @@
 {
-  "name": "@yourname/ttl-cache",
+  "name": "@rakshit798/ttl-cache",
   "version": "0.1.0",
   "description": "Zero-dependency in-memory cache for Node.js with LRU eviction, per-key TTL, events and async memoization.",
   "keywords": [
