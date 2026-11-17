@@ -1,0 +1,59 @@
+{
+  "name": "@yourname/ttl-cache",
+  "version": "0.1.0",
+  "description": "Zero-dependency in-memory cache for Node.js with LRU eviction, per-key TTL, events and async memoization.",
+  "keywords": [
+    "cache",
+    "lru",
+    "ttl",
+    "memoize",
+    "memory-cache",
+    "nodejs"
+  ],
+  "license": "MIT",
+  "author": "Your Name",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourname/ttl-cache.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourname/ttl-cache/issues"
+  },
+  "homepage": "https://github.com/yourname/ttl-cache#readme",
+  "type": "module",
+  "main": "./src/index.js",
+  "types": "./types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "types"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "test:coverage": "node --test --experimental-test-coverage",
+    "types": "node -e \"require('fs').rmSync('types',{recursive:true,force:true})\" && tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "example": "node examples/basic.js",
+    "lint:pkg": "publint",
+    "check": "npm run typecheck && npm test && npm run types && npm run lint:pkg",
+    "prepublishOnly": "npm run check"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "publint": "^0.3.25",
+    "typescript": "^6.0.3"
+  }
+}

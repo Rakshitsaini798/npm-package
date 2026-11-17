@@ -1,0 +1,27 @@
+# Publishes to npm when you push a tag like v1.2.3.
+# Uses npm Trusted Publishing (OIDC) — no NPM_TOKEN secret needed.
+# One-time setup: npmjs.com → your package → Settings → Trusted Publisher →
+# add this GitHub repo and the workflow filename "release.yml".
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+  id-token: write # required for trusted publishing + provenance
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: "https://registry.npmjs.org"
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm publish
