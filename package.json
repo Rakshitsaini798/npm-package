@@ -14,12 +14,12 @@
   "author": "Your Name",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourname/ttl-cache.git"
+    "url": "git+https://github.com/Rakshitsaini798/npm-package.git"
   },
   "bugs": {
     "url": "https://github.com/yourname/ttl-cache/issues"
   },
-  "homepage": "https://github.com/yourname/ttl-cache#readme",
+  "homepage": "https://github.com/Rakshitsaini798/npm-package#readme",
   "type": "module",
   "main": "./src/index.js",
   "types": "./types/index.d.ts",
